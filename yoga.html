@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ZenLife | Yoga & Meditation</title>
+
+<style>
+
+/* GENERAL STYLING */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #fafaf5;
+    color: #35463b;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* NAVIGATION BAR */
+
+header {
+    background: #ffffff;
+    padding: 18px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.06);
+}
+
+.logo {
+    font-size: 29px;
+    font-weight: bold;
+    color: #537b61;
+}
+
+.logo span {
+    color: #b69bc9;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+}
+
+nav a {
+    color: #52675a;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #a284bd;
+}
+
+/* HERO SECTION */
+
+.hero {
+    min-height: 540px;
+    display: flex;
+    align-items: center;
+    padding: 80px 9%;
+
+    background:
+    linear-gradient(90deg,
+    rgba(28,55,40,0.85),
+    rgba(28,55,40,0.15)),
+    url("https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1600&q=85");
+
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.hero h1 {
+    font-size: 56px;
+    line-height: 1.2;
+    margin-bottom: 22px;
+}
+
+.hero h1 span {
+    color: #d8c3e9;
+}
+
+.hero p {
+    font-size: 17px;
+    line-height: 1.9;
+    margin-bottom: 30px;
+    color: #f0f1e9;
+}
+
+.btn {
+    display: inline-block;
+    background: #8ba98b;
+    color: white;
+    padding: 14px 29px;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #b69bc9;
+    transform: translateY(-5px);
+}
+
+/* COMMON SECTION */
+
+section {
+    padding: 70px 8%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 43px;
+}
+
+.section-title h2 {
+    color: #52765b;
+    font-size: 35px;
+    margin-bottom: 12px;
+}
+
+.section-title p {
+    color: #87948a;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+/* YOGA POSES */
+
+.pose-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+    gap: 25px;
+}
+
+.pose-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    transition: 0.3s;
+}
+
+.pose-card:hover {
+    transform: translateY(-9px);
+    box-shadow: 0 12px 25px rgba(80,120,85,0.15);
+}
+
+.pose-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: 0.4s;
+}
+
+.pose-card:hover img {
+    transform: scale(1.05);
+}
+
+.pose-info {
+    padding: 23px;
+}
+
+.pose-info h3 {
+    color: #537b61;
+    font-size: 21px;
+    margin-bottom: 10px;
+}
+
+.pose-info p {
+    color: #7a897e;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* MEDITATION */
+
+.meditation-section {
+    background: #edf3e9;
+}
+
+.meditation-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+    gap: 23px;
+}
+
+.meditation-card {
+    background: white;
+    padding: 30px 23px;
+    border-radius: 15px;
+    text-align: center;
+    transition: 0.3s;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+}
+
+.meditation-card:hover {
+    transform: translateY(-7px);
+    background: #fbf8ff;
+}
+
+.meditation-card .icon {
+    font-size: 43px;
+    margin-bottom: 15px;
+}
+
+.meditation-card h3 {
+    color: #8b70a5;
+    margin-bottom: 12px;
+}
+
+.meditation-card p {
+    color: #7d8a80;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* INSTRUCTORS */
+
+.instructor-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+    gap: 27px;
+}
+
+.instructor-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+    transition: 0.3s;
+}
+
+.instructor-card:hover {
+    transform: translateY(-8px);
+}
+
+.instructor-card img {
+    width: 100%;
+    height: 270px;
+    object-fit: cover;
+}
+
+.instructor-info {
+    padding: 23px;
+}
+
+.instructor-info h3 {
+    color: #537b61;
+    margin-bottom: 8px;
+    font-size: 21px;
+}
+
+.instructor-info .role {
+    color: #a284bd;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.instructor-info p {
+    color: #829087;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* CLASS SCHEDULE */
+
+.schedule-section {
+    background: #f1ecf5;
+}
+
+.table-container {
+    overflow-x: auto;
+    background: white;
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.04);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 650px;
+}
+
+th {
+    background: #698b71;
+    color: white;
+    padding: 18px;
+}
+
+td {
+    padding: 17px;
+    text-align: center;
+    color: #617367;
+    border-bottom: 1px solid #e8eee8;
+}
+
+tr:hover td {
+    background: #f0f6ed;
+}
+
+td:first-child {
+    font-weight: bold;
+    color: #52765b;
+}
+
+/* MEMBERSHIP PLANS */
+
+.plan-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+    gap: 25px;
+}
+
+.plan-card {
+    background: white;
+    padding: 32px 25px;
+    text-align: center;
+    border-radius: 16px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+    border-top: 5px solid #8ba98b;
+    transition: 0.3s;
+}
+
+.plan-card:hover {
+    transform: translateY(-9px);
+    box-shadow: 0 12px 25px rgba(80,120,85,0.15);
+}
+
+.plan-card.featured {
+    border-top-color: #b69bc9;
+    background: #fbf8ff;
+}
+
+.plan-card h3 {
+    color: #52765b;
+    font-size: 23px;
+    margin-bottom: 15px;
+}
+
+.plan-price {
+    font-size: 34px;
+    color: #a284bd;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.plan-price span {
+    font-size: 14px;
+    color: #87948a;
+    font-weight: normal;
+}
+
+.plan-card ul {
+    list-style: none;
+    line-height: 2.5;
+    color: #748278;
+    margin-bottom: 20px;
+}
+
+.plan-btn {
+    display: inline-block;
+    background: #698b71;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.plan-btn:hover {
+    background: #a284bd;
+}
+
+/* WELLNESS ARTICLES */
+
+.article-section {
+    background: #edf3e9;
+}
+
+.article-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    gap: 25px;
+}
+
+.article-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: 0.3s;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.05);
+}
+
+.article-card:hover {
+    transform: translateY(-8px);
+}
+
+.article-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.article-info {
+    padding: 22px;
+}
+
+.article-info h3 {
+    color: #52765b;
+    margin-bottom: 12px;
+}
+
+.article-info p {
+    color: #829087;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.article-info a {
+    display: inline-block;
+    color: #a284bd;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.article-info a:hover {
+    color: #52765b;
+}
+
+/* WELLNESS QUOTE */
+
+.quote-section {
+    background:
+    linear-gradient(rgba(39,67,48,0.8),rgba(39,67,48,0.8)),
+    url("https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=1500&q=80");
+
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    color: white;
+}
+
+.quote-section h2 {
+    font-size: 34px;
+    color: #e1d0ee;
+    margin-bottom: 18px;
+}
+
+.quote-section p {
+    font-size: 18px;
+    line-height: 1.9;
+}
+
+/* FOOTER */
+
+footer {
+    background: #314d3a;
+    color: white;
+    text-align: center;
+    padding: 45px 8%;
+}
+
+footer h2 {
+    font-size: 29px;
+    color: #d8c3e9;
+    margin-bottom: 12px;
+}
+
+footer p {
+    color: #dce8dd;
+    line-height: 1.9;
+}
+
+.footer-links {
+    margin: 22px 0;
+}
+
+.footer-links a {
+    color: white;
+    margin: 10px;
+    font-size: 14px;
+}
+
+.footer-links a:hover {
+    color: #d8c3e9;
+}
+
+.copyright {
+    border-top: 1px solid #617866;
+    padding-top: 18px;
+    margin-top: 20px;
+    font-size: 13px;
+    color: #c3d3c6;
+}
+
+/* RESPONSIVE DESIGN */
+
+@media(max-width:768px) {
+
+    header {
+        flex-direction: column;
+        gap: 17px;
+    }
+
+    nav {
+        justify-content: center;
+        gap: 13px;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+    .hero {
+        padding: 65px 7%;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    section {
+        padding: 48px 6%;
+    }
+
+    .section-title h2 {
+        font-size: 28px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- NAVIGATION BAR -->
+
+<header>
+
+    <div class="logo">Zen<span>Life.</span> 🌿</div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#poses">Yoga Poses</a>
+        <a href="#meditation">Meditation</a>
+        <a href="#instructors">Instructors</a>
+        <a href="#schedule">Schedule</a>
+        <a href="#membership">Membership</a>
+        <a href="#articles">Articles</a>
+    </nav>
+
+</header>
+
+
+<!-- HERO SECTION -->
+
+<div class="hero" id="home">
+
+    <div class="hero-content">
+
+        <h1>
+            Find Your Inner<br>
+            <span>Peace & Balance.</span>
+        </h1>
+
+        <p>
+            Discover the power of yoga and meditation.
+            Relax your mind, strengthen your body and
+            create a healthier, happier lifestyle.
+        </p>
+
+        <a href="#poses" class="btn">
+            Explore Yoga →
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- YOGA POSES -->
+
+<section id="poses">
+
+    <div class="section-title">
+
+        <h2>Explore Yoga Poses</h2>
+
+        <p>
+            Discover simple yoga poses to improve flexibility,
+            balance and relaxation.
+        </p>
+
+    </div>
+
+    <div class="pose-container">
+
+        <div class="pose-card">
+
+            <img src="https://images.unsplash.com/photo-1562088287-bde35a1ea917?auto=format&fit=crop&w=700&q=80">
+
+            <div class="pose-info">
+
+                <h3>Mountain Pose</h3>
+
+                <p>
+                    A standing yoga posture that focuses on
+                    body alignment, balance and posture.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="pose-card">
+
+            <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=700&q=80">
+
+            <div class="pose-info">
+
+                <h3>Tree Pose</h3>
+
+                <p>
+                    A balancing posture that encourages
+                    concentration and body awareness.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="pose-card">
+
+            <img src="https://images.unsplash.com/photo-1599447421416-3414500d18a5?auto=format&fit=crop&w=700&q=80">
+
+            <div class="pose-info">
+
+                <h3>Child's Pose</h3>
+
+                <p>
+                    A gentle resting posture commonly used
+                    for relaxation and comfortable stretching.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="pose-card">
+
+            <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=700&q=80">
+
+            <div class="pose-info">
+
+                <h3>Lotus Pose</h3>
+
+                <p>
+                    A seated posture often used during
+                    meditation and mindful breathing.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- MEDITATION TECHNIQUES -->
+
+<section class="meditation-section" id="meditation">
+
+    <div class="section-title">
+
+        <h2>Meditation Techniques</h2>
+
+        <p>
+            Practice mindfulness and discover moments
+            of peace in your daily routine.
+        </p>
+
+    </div>
+
+    <div class="meditation-container">
+
+        <div class="meditation-card">
+
+            <div class="icon">🌬️</div>
+
+            <h3>Breathing Meditation</h3>
+
+            <p>
+                Focus on natural breathing and develop
+                awareness of the present moment.
+            </p>
+
+        </div>
+
+
+        <div class="meditation-card">
+
+            <div class="icon">🧘</div>
+
+            <h3>Mindfulness</h3>
+
+            <p>
+                Observe your thoughts and surroundings
+                without judging them.
+            </p>
+
+        </div>
+
+
+        <div class="meditation-card">
+
+            <div class="icon">🌸</div>
+
+            <h3>Guided Meditation</h3>
+
+            <p>
+                Follow spoken instructions to practise
+                relaxation and mental awareness.
+            </p>
+
+        </div>
+
+
+        <div class="meditation-card">
+
+            <div class="icon">✨</div>
+
+            <h3>Mantra Meditation</h3>
+
+            <p>
+                Repeat a peaceful word or sound to
+                maintain attention and focus.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- INSTRUCTORS -->
+
+<section id="instructors">
+
+    <div class="section-title">
+
+        <h2>Meet Our Instructors</h2>
+
+        <p>
+            Learn from experienced yoga and meditation instructors.
+        </p>
+
+    </div>
+
+    <div class="instructor-container">
+
+        <div class="instructor-card">
+
+            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=700&q=80">
+
+            <div class="instructor-info">
+
+                <h3>Ananya Sharma</h3>
+
+                <p class="role">Yoga Instructor</p>
+
+                <p>
+                    8 years of experience in yoga,
+                    flexibility training and beginner classes.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="instructor-card">
+
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=700&q=80">
+
+            <div class="instructor-info">
+
+                <h3>Arjun Mehta</h3>
+
+                <p class="role">Meditation Coach</p>
+
+                <p>
+                    10 years of experience in mindfulness,
+                    breathing practices and meditation.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="instructor-card">
+
+            <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=700&q=80">
+
+            <div class="instructor-info">
+
+                <h3>Meera Reddy</h3>
+
+                <p class="role">Wellness Trainer</p>
+
+                <p>
+                    7 years of experience in gentle yoga,
+                    wellness and relaxation sessions.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CLASS SCHEDULE -->
+
+<section class="schedule-section" id="schedule">
+
+    <div class="section-title">
+
+        <h2>Weekly Class Schedule</h2>
+
+        <p>
+            Find a convenient time for your yoga
+            and meditation practice.
+        </p>
+
+    </div>
+
+    <div class="table-container">
+
+        <table>
+
+            <tr>
+                <th>Day</th>
+                <th>Class</th>
+                <th>Instructor</th>
+                <th>Time</th>
+                <th>Level</th>
+            </tr>
+
+            <tr>
+                <td>Monday</td>
+                <td>Morning Yoga</td>
+                <td>Ananya</td>
+                <td>6:00 AM</td>
+                <td>Beginner</td>
+            </tr>
+
+            <tr>
+                <td>Tuesday</td>
+                <td>Meditation</td>
+                <td>Arjun</td>
+                <td>7:00 AM</td>
+                <td>All Levels</td>
+            </tr>
+
+            <tr>
+                <td>Wednesday</td>
+                <td>Power Yoga</td>
+                <td>Meera</td>
+                <td>5:30 PM</td>
+                <td>Intermediate</td>
+            </tr>
+
+            <tr>
+                <td>Thursday</td>
+                <td>Mindfulness</td>
+                <td>Arjun</td>
+                <td>6:00 PM</td>
+                <td>Beginner</td>
+            </tr>
+
+            <tr>
+                <td>Friday</td>
+                <td>Flexibility Yoga</td>
+                <td>Ananya</td>
+                <td>7:00 AM</td>
+                <td>All Levels</td>
+            </tr>
+
+            <tr>
+                <td>Saturday</td>
+                <td>Relaxation Yoga</td>
+                <td>Meera</td>
+                <td>8:00 AM</td>
+                <td>Beginner</td>
+            </tr>
+
+        </table>
+
+    </div>
+
+</section>
+
+
+<!-- MEMBERSHIP PLANS -->
+
+<section id="membership">
+
+    <div class="section-title">
+
+        <h2>Choose Your Membership</h2>
+
+        <p>
+            Select a plan that matches your wellness journey.
+        </p>
+
+    </div>
+
+    <div class="plan-container">
+
+        <div class="plan-card">
+
+            <h3>Basic Plan</h3>
+
+            <div class="plan-price">
+                ₹499 <span>/ month</span>
+            </div>
+
+            <ul>
+                <li>✓ 4 Yoga Classes</li>
+                <li>✓ Basic Meditation</li>
+                <li>✓ Beginner Guidance</li>
+                <li>✓ Weekly Wellness Tips</li>
+            </ul>
+
+            <a href="#schedule" class="plan-btn">
+                Explore Plan
+            </a>
+
+        </div>
+
+
+        <div class="plan-card featured">
+
+            <h3>Premium Plan</h3>
+
+            <div class="plan-price">
+                ₹999 <span>/ month</span>
+            </div>
+
+            <ul>
+                <li>✓ Unlimited Yoga Classes</li>
+                <li>✓ Guided Meditation</li>
+                <li>✓ Personal Guidance</li>
+                <li>✓ All Wellness Articles</li>
+            </ul>
+
+            <a href="#schedule" class="plan-btn">
+                Explore Plan
+            </a>
+
+        </div>
+
+
+        <div class="plan-card">
+
+            <h3>Family Plan</h3>
+
+            <div class="plan-price">
+                ₹1499 <span>/ month</span>
+            </div>
+
+            <ul>
+                <li>✓ Family Yoga Sessions</li>
+                <li>✓ Group Meditation</li>
+                <li>✓ Multiple Members</li>
+                <li>✓ Wellness Guidance</li>
+            </ul>
+
+            <a href="#schedule" class="plan-btn">
+                Explore Plan
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- WELLNESS ARTICLES -->
+
+<section class="article-section" id="articles">
+
+    <div class="section-title">
+
+        <h2>Wellness & Healthy Living</h2>
+
+        <p>
+            Explore simple ideas for a peaceful
+            and balanced lifestyle.
+        </p>
+
+    </div>
+
+    <div class="article-container">
+
+        <div class="article-card">
+
+            <img src="https://images.unsplash.com/photo-1545389336-cf090694435e?auto=format&fit=crop&w=700&q=80">
+
+            <div class="article-info">
+
+                <h3>Benefits of Daily Yoga</h3>
+
+                <p>
+                    Learn how regular yoga practice can
+                    support flexibility, balance and general wellbeing.
+                </p>
+
+                <a href="#poses">Explore Yoga →</a>
+
+            </div>
+
+        </div>
+
+
+        <div class="article-card">
+
+            <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=700&q=80">
+
+            <div class="article-info">
+
+                <h3>Importance of Meditation</h3>
+
+                <p>
+                    Discover how mindfulness and meditation
+                    can help develop focus and relaxation.
+                </p>
+
+                <a href="#meditation">Explore Meditation →</a>
+
+            </div>
+
+        </div>
+
+
+        <div class="article-card">
+
+            <img src="https://images.unsplash.com/photo-1499209974431-9dddcece7f88?auto=format&fit=crop&w=700&q=80">
+
+            <div class="article-info">
+
+                <h3>Healthy Daily Habits</h3>
+
+                <p>
+                    Build simple habits such as regular sleep,
+                    hydration and mindful daily routines.
+                </p>
+
+                <a href="#home">Explore Wellness →</a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- MOTIVATIONAL SECTION -->
+
+<section class="quote-section">
+
+    <h2>Peace Begins Within You 🌿</h2>
+
+    <p>
+        "Take a deep breath, relax your mind and enjoy the present moment."<br>
+        Make time for yourself. Your wellness matters.
+    </p>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <h2>ZenLife. 🌿</h2>
+
+    <p>
+        Yoga | Meditation | Mindfulness | Wellness
+    </p>
+
+    <p>
+        Discover peace, improve balance and create
+        a healthier lifestyle with ZenLife.
+    </p>
+
+    <div class="footer-links">
+
+        <a href="#home">Home</a>
+        <a href="#poses">Yoga</a>
+        <a href="#meditation">Meditation</a>
+        <a href="#schedule">Schedule</a>
+        <a href="#membership">Membership</a>
+
+    </div>
+
+    <div class="copyright">
+
+        © 2026 ZenLife Wellness. All Rights Reserved.
+
+    </div>
+
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookNest | Digital Library</title>
+    <link rel="stylesheet" href="library.css">
+</head>
+<body>
+
+<header class="header">
+    <a href="#home" class="logo">Book<span>Nest.</span></a>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#categories">Categories</a>
+        <a href="#catalogue">Catalogue</a>
+        <a href="#rules">Library Rules</a>
+    </nav>
+
+    <a href="#catalogue" class="header-btn">Explore Books</a>
+</header>
+
+<main>
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <span class="tag">YOUR KNOWLEDGE DESTINATION</span>
+            <h1>Discover a world<br>between <span>pages.</span></h1>
+            <p>
+                Explore thousands of stories, discover new ideas and
+                find your next favourite book at BookNest Library.
+            </p>
+            <a href="#catalogue" class="primary-btn">Browse Collection →</a>
+        </div>
+
+        <div class="hero-art">
+            <div class="floating-book book-one">THE<br>ART OF<br>THINKING</div>
+            <div class="floating-book book-two">BEYOND<br>THE<br>UNIVERSE</div>
+            <div class="floating-book book-three">THE<br>LAST<br>CHAPTER</div>
+            <div class="circle"></div>
+        </div>
+    </section>
+
+    <section class="stats">
+        <div><strong>12,500+</strong><span>Books Available</span></div>
+        <div><strong>2,800+</strong><span>Registered Readers</span></div>
+        <div><strong>35+</strong><span>Book Categories</span></div>
+        <div><strong>24/7</strong><span>Learning Inspiration</span></div>
+    </section>
+
+    <section class="section" id="categories">
+        <div class="section-heading">
+            <div>
+                <span class="tag">EXPLORE COLLECTIONS</span>
+                <h2>Browse by Category</h2>
+                <p>Find books that match your interests.</p>
+            </div>
+        </div>
+
+        <div class="category-grid">
+            <a href="#fiction" class="category-card">
+                <span>📖</span>
+                <h3>Fiction</h3>
+                <p>Stories and novels</p>
+            </a>
+
+            <a href="#science" class="category-card">
+                <span>🔬</span>
+                <h3>Science</h3>
+                <p>Discover and explore</p>
+            </a>
+
+            <a href="#technology" class="category-card">
+                <span>💻</span>
+                <h3>Technology</h3>
+                <p>Computing and innovation</p>
+            </a>
+
+            <a href="#history" class="category-card">
+                <span>🏛️</span>
+                <h3>History</h3>
+                <p>Explore the past</p>
+            </a>
+
+            <a href="#biography" class="category-card">
+                <span>👤</span>
+                <h3>Biography</h3>
+                <p>Lives and achievements</p>
+            </a>
+        </div>
+    </section>
+
+    <section class="section collection" id="catalogue">
+        <div class="section-heading">
+            <div>
+                <span class="tag">HANDPICKED FOR YOU</span>
+                <h2>Popular Books</h2>
+                <p>Explore our featured library collection.</p>
+            </div>
+        </div>
+
+        <form class="search-panel" action="#catalogue" method="get">
+            <input type="search" name="search"
+                   placeholder="Search by book title or author...">
+
+            <select name="category" aria-label="Select category">
+                <option value="">All Categories</option>
+                <option>Fiction</option>
+                <option>Science</option>
+                <option>Technology</option>
+                <option>History</option>
+                <option>Biography</option>
+            </select>
+
+            <button type="submit">Search Books</button>
+        </form>
+
+        <div class="book-grid">
+
+            <article class="book-card" id="fiction">
+                <div class="cover cover-one">
+                    <small>BOOKNEST CLASSICS</small>
+                    <strong>THE<br>LAST<br>CHAPTER</strong>
+                    <span>A NOVEL</span>
+                </div>
+                <div class="book-info">
+                    <span class="category-label">FICTION</span>
+                    <h3>The Last Chapter</h3>
+                    <p>Author: Emily Carter</p>
+                    <span class="availability available">● Available</span>
+                </div>
+            </article>
+
+            <article class="book-card" id="science">
+                <div class="cover cover-two">
+                    <small>SCIENCE COLLECTION</small>
+                    <strong>BEYOND<br>THE<br>UNIVERSE</strong>
+                    <span>EXPLORE SPACE</span>
+                </div>
+                <div class="book-info">
+                    <span class="category-label">SCIENCE</span>
+                    <h3>Beyond the Universe</h3>
+                    <p>Author: Dr. Alan Morris</p>
+                    <span class="availability issued">● Issued</span>
+                </div>
+            </article>
+
+            <article class="book-card" id="technology">
+                <div class="cover cover-three">
+                    <small>TECH LIBRARY</small>
+                    <strong>THE ART<br>OF<br>CODING</strong>
+                    <span>PROGRAMMING</span>
+                </div>
+                <div class="book-info">
+                    <span class="category-label">TECHNOLOGY</span>
+                    <h3>The Art of Coding</h3>
+                    <p>Author: James Wilson</p>
+                    <span class="availability available">● Available</span>
+                </div>
+            </article>
+
+            <article class="book-card" id="history">
+                <div class="cover cover-four">
+                    <small>HISTORY SERIES</small>
+                    <strong>ANCIENT<br>WORLDS</strong>
+                    <span>HISTORY REVEALED</span>
+                </div>
+                <div class="book-info">
+                    <span class="category-label">HISTORY</span>
+                    <h3>Ancient Worlds</h3>
+                    <p>Author: Robert Lewis</p>
+                    <span class="availability limited">● Limited Copies</span>
+                </div>
+            </article>
+
+            <article class="book-card" id="biography">
+                <div class="cover cover-five">
+                    <small>INSPIRATION</small>
+                    <strong>THE<br>POWER OF<br>DREAMS</strong>
+                    <span>A LIFE STORY</span>
+                </div>
+                <div class="book-info">
+                    <span class="category-label">BIOGRAPHY</span>
+                    <h3>The Power of Dreams</h3>
+                    <p>Author: Sarah Mitchell</p>
+                    <span class="availability available">● Available</span>
+                </div>
+            </article>
+
+            <article class="book-card" id="programming">
+                <div class="cover cover-six">
+                    <small>LEARNING SERIES</small>
+                    <strong>PYTHON<br>MASTERY</strong>
+                    <span>FROM BASICS TO ADVANCED</span>
+                </div>
+                <div class="book-info">
+                    <span class="category-label">TECHNOLOGY</span>
+                    <h3>Python Mastery</h3>
+                    <p>Author: Daniel Brooks</p>
+                    <span class="availability issued">● Issued</span>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <section class="section catalogue-section">
+        <div class="section-heading">
+            <div>
+                <span class="tag">LIBRARY RECORDS</span>
+                <h2>Book Catalogue</h2>
+                <p>Detailed information about selected books.</p>
+            </div>
+        </div>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Book ID</th>
+                        <th>Book Title</th>
+                        <th>Author</th>
+                        <th>Category</th>
+                        <th>Availability</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>BK101</td>
+                        <td>The Last Chapter</td>
+                        <td>Emily Carter</td>
+                        <td>Fiction</td>
+                        <td><span class="table-status green">Available</span></td>
+                    </tr>
+                    <tr>
+                        <td>BK102</td>
+                        <td>Beyond the Universe</td>
+                        <td>Dr. Alan Morris</td>
+                        <td>Science</td>
+                        <td><span class="table-status red">Issued</span></td>
+                    </tr>
+                    <tr>
+                        <td>BK103</td>
+                        <td>The Art of Coding</td>
+                        <td>James Wilson</td>
+                        <td>Technology</td>
+                        <td><span class="table-status green">Available</span></td>
+                    </tr>
+                    <tr>
+                        <td>BK104</td>
+                        <td>Ancient Worlds</td>
+                        <td>Robert Lewis</td>
+                        <td>History</td>
+                        <td><span class="table-status orange">Limited</span></td>
+                    </tr>
+                    <tr>
+                        <td>BK105</td>
+                        <td>The Power of Dreams</td>
+                        <td>Sarah Mitchell</td>
+                        <td>Biography</td>
+                        <td><span class="table-status green">Available</span></td>
+                    </tr>
+                    <tr>
+                        <td>BK106</td>
+                        <td>Python Mastery</td>
+                        <td>Daniel Brooks</td>
+                        <td>Technology</td>
+                        <td><span class="table-status red">Issued</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="rules-section section" id="rules">
+        <div class="section-heading">
+            <div>
+                <span class="tag">READ BEFORE BORROWING</span>
+                <h2>Library Rules & Regulations</h2>
+                <p>Help us maintain a peaceful learning environment.</p>
+            </div>
+        </div>
+
+        <div class="rules-grid">
+            <div class="rule">
+                <span>01</span>
+                <h3>Borrowing Period</h3>
+                <p>Students can borrow up to 3 books for a period of 14 days.</p>
+            </div>
+
+            <div class="rule">
+                <span>02</span>
+                <h3>Return on Time</h3>
+                <p>Return books on or before the due date to avoid late fees.</p>
+            </div>
+
+            <div class="rule">
+                <span>03</span>
+                <h3>Keep Books Safe</h3>
+                <p>Do not damage, mark, fold or write inside library books.</p>
+            </div>
+
+            <div class="rule">
+                <span>04</span>
+                <h3>Maintain Silence</h3>
+                <p>Keep mobile phones silent and maintain a quiet atmosphere.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="closing">
+        <span class="tag">READ • LEARN • GROW</span>
+        <h2>Every book opens a new world.</h2>
+        <p>Visit BookNest and make reading a part of your everyday journey.</p>
+        <a href="#catalogue" class="primary-btn">Explore the Library →</a>
+    </section>
+</main>
+
+<footer>
+    <a href="#home" class="logo">Book<span>Nest.</span></a>
+    <p>© 2026 BookNest Library. Designed using HTML5 and CSS3.</p>
+    <a href="#rules">Library Rules</a>
+</footer>
+
+</body>
+</html>
