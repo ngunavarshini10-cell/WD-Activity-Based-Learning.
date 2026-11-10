@@ -8,7 +8,7 @@
 
 ## Selected case studies
 1. **Case 14 – Healthy Food and Nutrition Website (FreshBite):** recipe cards, food categories, ingredient lists, calorie information, meal plan and healthy eating tips.
-2. **Case 15 – Yoga and Meditation Website (ZenLife):** yoga pose cards, meditation techniques, instructor information, class schedule and wellness content.
+2. **Case 18 – Hotel reservation website interface:** .
 3. **Case 5 – Digital Library Management Interface (BookNest):** book categories, featured books, author details, availability labels, search/filter interface and library rules.
 
 ## Project structure
