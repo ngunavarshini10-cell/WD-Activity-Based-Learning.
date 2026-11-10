@@ -1,0 +1,511 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus and train ticket Booking Website</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f2f6fa;
+            color: #333;
+        }
+
+        header {
+            background-color: #123b64;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        nav {
+            background-color: #0b2947;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #ffcc66;
+        }
+
+        .hero {
+            background: linear-gradient(
+                rgba(0,0,0,0.5),
+                rgba(0,0,0,0.5)
+            ),
+            url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200");
+
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 90px 20px;
+        }
+
+        .hero h2 {
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .container {
+            padding: 40px 7%;
+        }
+
+        h2 {
+            color: #123b64;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .booking-form {
+            background: white;
+            max-width: 850px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px #ccc;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(220px, 1fr));
+            gap: 18px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 7px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #ff9800;
+            color: white;
+            border: none;
+            padding: 13px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #e47d00;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(230px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px #ccc;
+            text-align: center;
+            padding-bottom: 20px;
+        }
+
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .card h3 {
+            color: #123b64;
+            margin: 15px;
+        }
+
+        .card p {
+            padding: 5px;
+        }
+
+        .fare {
+            color: #e67e00;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 14px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #123b64;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #eaf1f8;
+        }
+
+        .seat-layout {
+            background: white;
+            max-width: 600px;
+            margin: auto;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 3px 10px #ccc;
+        }
+
+        .seats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin: 25px auto;
+            max-width: 350px;
+        }
+
+        .seat {
+            background-color: #d8f5df;
+            padding: 15px 5px;
+            border-radius: 7px;
+            border: 1px solid #39a65c;
+            font-weight: bold;
+        }
+
+        .occupied {
+            background-color: #ffcccc;
+            border-color: #e44;
+        }
+
+        .selected {
+            background-color: #b8d7ff;
+            border-color: #2673c9;
+        }
+
+        .legend {
+            margin: 15px;
+            line-height: 2;
+        }
+
+        footer {
+            background-color: #123b64;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 30px;
+        }
+            nav a {
+                display: inline-block;
+                margin: 7px;
+            }
+
+            .hero h2 {
+                font-size: 27px;
+            }
+
+            .container {
+                padding: 25px 5%;
+            }
+
+            th, td {
+                padding: 8px;
+                font-size: 13px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<header>
+    <h1>✈ TravelEase</h1>
+    <p>Your Journey, Our Responsibility</p>
+</header>
+<nav>
+    <a href="#home">Home</a>
+    <a href="#booking">Book Tickets</a>
+    <a href="#services">Services</a>
+    <a href="#fares">Fares</a>
+    <a href="#seats">Seats</a>
+</nav>
+<section class="hero" id="home">
+    <h2>Explore the World with TravelEase</h2>
+    <p>Book your journey easily and travel comfortably.</p>
+</section>
+<section class="container" id="booking">
+
+    <h2>Book Your Journey</h2>
+
+    <form class="booking-form" action="#" method="get">
+
+        <div class="form-grid">
+
+            <div>
+                <label for="source">Source</label>
+                <input type="text" id="source"
+                       placeholder="Enter departure city" required>
+            </div>
+
+            <div>
+                <label for="destination">Destination</label>
+                <input type="text" id="destination"
+                       placeholder="Enter destination city" required>
+            </div>
+
+            <div>
+                <label for="date">Travel Date</label>
+                <input type="date" id="date" required>
+            </div>
+
+            <div>
+                <label for="return">Return Date</label>
+                <input type="date" id="return">
+            </div>
+
+            <div>
+                <label for="travel">Travel Type</label>
+                <select id="travel">
+                    <option>One Way</option>
+                    <option>Round Trip</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="mode">Travel Mode</label>
+                <select id="mode">
+                    <option>Bus</option>
+                    <option>Train</option>
+                    <option>Flight</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="passengers">Passengers</label>
+                <select id="passengers">
+                    <option>1 Passenger</option>
+                    <option>2 Passengers</option>
+                    <option>3 Passengers</option>
+                    <option>4 Passengers</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="class">Travel Class</label>
+                <select id="class">
+                    <option>Economy</option>
+                    <option>Business</option>
+                    <option>First Class</option>
+                </select>
+            </div>
+
+        </div>
+
+        <div class="center">
+            <button type="submit">Search Tickets</button>
+        </div>
+
+    </form>
+
+</section>
+<section class="container">
+
+    <h2>Passenger Details</h2>
+
+    <form class="booking-form" action="#" method="get">
+
+        <label for="pname">Passenger Name</label>
+        <input type="text" id="pname"
+               placeholder="Enter full name" required>
+
+        <label for="age">Age</label>
+        <input type="number" id="age"
+               placeholder="Enter age" min="1" required>
+
+        <label for="gender">Gender</label>
+        <select id="gender">
+            <option>Male</option>
+            <option>Female</option>
+            <option>Other</option>
+        </select>
+
+        <label for="mobile">Mobile Number</label>
+        <input type="tel" id="mobile"
+               placeholder="Enter mobile number" required>
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email"
+               placeholder="Enter email address" required>
+
+    </form>
+
+</section>
+<section class="container" id="services">
+
+    <h2>Available Travel Services</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=500"
+                 alt="Bus travel">
+            <h3>Bus Booking</h3>
+            <p>Comfortable and affordable bus journeys.</p>
+            <p class="fare">From ₹500</p>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1474487548417-781cb71495f3?w=500"
+                 alt="Train travel">
+            <h3>Train Booking</h3>
+            <p>Enjoy safe and convenient train journeys.</p>
+            <p class="fare">From ₹300</p>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=500"
+                 alt="Airplane travel">
+            <h3>Flight Booking</h3>
+            <p>Fast and comfortable air travel.</p>
+            <p class="fare">From ₹2,500</p>
+        </div>
+
+    </div>
+
+</section>
+<section class="container" id="fares">
+
+    <h2>Fare Information</h2>
+
+    <table>
+        <tr>
+            <th>Travel Mode</th>
+            <th>Class</th>
+            <th>Starting Fare</th>
+            <th>Facilities</th>
+        </tr>
+
+        <tr>
+            <td>Bus</td>
+            <td>AC Sleeper</td>
+            <td>₹500</td>
+            <td>AC, Wi-Fi</td>
+        </tr>
+
+        <tr>
+            <td>Train</td>
+            <td>Sleeper</td>
+            <td>₹300</td>
+            <td>Food, Seating</td>
+        </tr>
+
+        <tr>
+            <td>Train</td>
+            <td>AC Class</td>
+            <td>₹1,000</td>
+            <td>AC, Comfortable Seats</td>
+        </tr>
+
+        <tr>
+            <td>Flight</td>
+            <td>Economy</td>
+            <td>₹2,500</td>
+            <td>Meals, Luggage</td>
+        </tr>
+
+        <tr>
+            <td>Flight</td>
+            <td>Business</td>
+            <td>₹6,000</td>
+            <td>Premium Service</td>
+        </tr>
+    </table>
+
+</section>
+
+<section class="container" id="seats">
+
+    <h2>Seat Selection</h2>
+
+    <div class="seat-layout">
+
+        <h3>Choose Your Seat</h3>
+
+        <p>Front Side</p>
+
+        <div class="seats">
+
+            <div class="seat">1A</div>
+            <div class="seat">1B</div>
+            <div class="seat occupied">1C</div>
+            <div class="seat">1D</div>
+
+            <div class="seat">2A</div>
+            <div class="seat selected">2B</div>
+            <div class="seat">2C</div>
+            <div class="seat occupied">2D</div>
+
+            <div class="seat">3A</div>
+            <div class="seat">3B</div>
+            <div class="seat">3C</div>
+            <div class="seat">3D</div>
+
+            <div class="seat occupied">4A</div>
+            <div class="seat">4B</div>
+            <div class="seat">4C</div>
+            <div class="seat">4D</div>
+
+        </div>
+
+        <div class="legend">
+            <p>🟩 Available Seats</p>
+            <p>🟥 Booked Seats</p>
+            <p>🟦 Selected Seat (Sample)</p>
+        </div>
+
+        <p><strong>Selected Seat: 2B</strong></p>
+
+    </div>
+
+</section>
+<footer>
+    <h2 style="color:white;">TravelEase</h2>
+    <p>Travel More | Explore More | Enjoy More</p>
+    <p>Contact: +91 98765 43210</p>
+    <p>Email: support@travelease.com</p>
+    <p>© 2026 TravelEase. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
