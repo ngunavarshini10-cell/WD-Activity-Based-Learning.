@@ -1,0 +1,317 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthy food and Nutrition website</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f5f9f3;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #27834b;
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #1e663b;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #c9f7a5;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+            background: #e2f3df;
+        }
+
+        .hero h2 {
+            color: #237b43;
+            font-size: 32px;
+        }
+
+        .hero p {
+            margin: 15px;
+            font-size: 18px;
+        }
+
+        .container {
+            padding: 35px 7%;
+        }
+
+        h2 {
+            color: #237b43;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(230px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px #ccc;
+            padding-bottom: 20px;
+            text-align: center;
+        }
+
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .card h3 {
+            color: #27834b;
+            margin: 12px;
+        }
+
+        .card p {
+            padding: 0 15px;
+        }
+
+        .card ul {
+            text-align: left;
+            padding: 10px 35px;
+        }
+
+        .calories {
+            color: #e07824;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .meal-plan {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px #ccc;
+            margin-bottom: 15px;
+        }
+
+        .meal-plan h3 {
+            color: #27834b;
+        }
+
+        .tips {
+            background: #e4f3e2;
+            padding: 30px;
+            border-radius: 12px;
+        }
+
+        .tips ul {
+            padding-left: 25px;
+        }
+
+        footer {
+            background: #1e663b;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+        }
+       nav a {
+                display: inline-block;
+                margin: 7px;
+            }
+
+       .hero h2 {
+                font-size: 25px;
+            }
+
+      .container {
+                padding: 25px 5%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>🥗 Healthy Bites</h1>
+    <p>Eat Healthy, Stay Healthy!</p>
+</header>
+
+<nav>
+    <a href="#home">Home</a>
+    <a href="#categories">Categories</a>
+    <a href="#recipes">Recipes</a>
+    <a href="#plans">Meal Plans</a>
+    <a href="#tips">Health Tips</a>
+</nav>
+
+<section class="hero" id="home">
+    <h2>Welcome to Healthy Bites</h2>
+    <p>Discover delicious and nutritious food recipes
+       for a healthy lifestyle.</p>
+    <p>Healthy food makes a healthy life!</p>
+</section>
+
+<section class="container" id="categories">
+    <h2>Food Categories</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=500"
+                 alt="Fresh vegetable salad">
+            <h3>Vegetables</h3>
+            <p>Fresh vegetables rich in vitamins and minerals.</p>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=500"
+                 alt="Healthy fruits">
+            <h3>Fruits</h3>
+            <p>Fresh fruits full of vitamins and antioxidants.</p>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1517673132405-a56a62b18caf?w=500"
+                 alt="Healthy grains">
+            <h3>Whole Grains</h3>
+            <p>Nutritious grains that provide energy and fibre.</p>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=500"
+                 alt="Healthy protein food">
+            <h3>Protein Foods</h3>
+            <p>Foods like beans, lentils, eggs and nuts.</p>
+        </div>
+
+    </div>
+</section>
+
+<section class="container" id="recipes">
+    <h2>Nutritious Recipes</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=500"
+                 alt="Vegetable salad">
+            <h3>Vegetable Salad</h3>
+            <p>A fresh and healthy salad for lunch.</p>
+            <ul>
+                <li>Cucumber</li>
+                <li>Tomato</li>
+                <li>Carrot</li>
+                <li>Lemon juice</li>
+            </ul>
+            <p class="calories">Approx. 120 Calories</p>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1517673132405-a56a62b18caf?w=500"
+                 alt="Oatmeal breakfast">
+            <h3>Healthy Oatmeal</h3>
+            <p>A nutritious breakfast to start your day.</p>
+            <ul>
+                <li>Oats</li>
+                <li>Milk</li>
+                <li>Banana</li>
+                <li>Almonds</li>
+            </ul>
+            <p class="calories">Approx. 250 Calories</p>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=500"
+                 alt="Healthy soup">
+            <h3>Vegetable Soup</h3>
+            <p>A light and healthy evening meal.</p>
+            <ul>
+                <li>Carrot</li>
+                <li>Beans</li>
+                <li>Tomato</li>
+                <li>Pepper</li>
+            </ul>
+            <p class="calories">Approx. 150 Calories</p>
+        </div>
+
+    </div>
+</section>
+
+<section class="container" id="plans">
+    <h2>Daily Healthy Meal Plan</h2>
+
+    <div class="meal-plan">
+        <h3>🌅 Breakfast</h3>
+        <p>Oatmeal, banana and a glass of milk.</p>
+    </div>
+
+    <div class="meal-plan">
+        <h3>☀️ Lunch</h3>
+        <p>Rice, dal, vegetable curry and curd.</p>
+    </div>
+
+    <div class="meal-plan">
+        <h3>🍎 Evening Snack</h3>
+        <p>Fresh fruits and a handful of nuts.</p>
+    </div>
+
+    <div class="meal-plan">
+        <h3>🌙 Dinner</h3>
+        <p>Chapati, vegetable curry and salad.</p>
+    </div>
+</section>
+
+<!-- Healthy Eating Tips -->
+
+<section class="container" id="tips">
+    <h2>Healthy Eating Tips</h2>
+
+    <div class="tips">
+        <ul>
+            <li>Eat fresh fruits and vegetables daily.</li>
+            <li>Drink enough water throughout the day.</li>
+            <li>Include protein-rich foods in your meals.</li>
+            <li>Avoid eating too much junk food.</li>
+            <li>Choose whole grains and fibre-rich foods.</li>
+            <li>Eat meals at regular times.</li>
+            <li>Maintain a balanced and varied diet.</li>
+        </ul>
+    </div>
+</section>
+
+<footer>
+    <h3>Healthy Bites 🥗</h3>
+    <p>Eat Well | Live Well | Stay Healthy</p>
+    <p>© 2026 Healthy Bites. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
