@@ -1,0 +1,382 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grand Palace Hotel</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        header {
+            background-color: #172b4d;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        header h1 {
+            font-size: 32px;
+        }
+
+        nav {
+            background-color: #d4a84f;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav a {
+            color: #172b4d;
+            text-decoration: none;
+            margin: 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: white;
+        }
+
+        .hero {
+            background: linear-gradient(
+                rgba(0,0,0,0.5),
+                rgba(0,0,0,0.5)
+            ),
+            url("https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1200");
+
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            color: white;
+            text-align: center;
+            padding-top: 120px;
+        }
+
+        .hero h2 {
+            font-size: 40px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin: 15px;
+        }
+
+        .container {
+            padding: 40px 7%;
+        }
+
+        h2 {
+            text-align: center;
+            color: #172b4d;
+            margin-bottom: 30px;
+        }
+
+        .room-container {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .room-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px #ccc;
+        }
+
+        .room-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .room-card h3 {
+            color: #172b4d;
+            padding: 12px;
+        }
+
+        .room-card p {
+            padding: 5px 15px;
+        }
+
+        .price {
+            color: #b8860b;
+            font-weight: bold;
+            font-size: 19px;
+            padding-bottom: 15px !important;
+        }
+
+        .facilities {
+            background-color: #e9edf3;
+            padding: 35px;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .facilities ul {
+            list-style: none;
+        }
+
+        .facilities li {
+            padding: 10px;
+            font-size: 18px;
+        }
+
+        .booking {
+            background-color: white;
+            padding: 30px;
+            max-width: 700px;
+            margin: auto;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px #ccc;
+        }
+
+        .booking label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        .booking input,
+        .booking select,
+        .booking textarea {
+            width: 100%;
+            padding: 12px;
+            margin-top: 7px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .booking button {
+            width: 100%;
+            background-color: #172b4d;
+            color: white;
+            padding: 14px;
+            border: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            font-size: 17px;
+            cursor: pointer;
+        }
+
+        .booking button:hover {
+            background-color: #d4a84f;
+            color: #172b4d;
+        }
+
+        footer {
+            background-color: #172b4d;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 40px;
+        }
+            nav a {
+                display: inline-block;
+                margin: 7px;
+            }
+
+            .hero h2 {
+                font-size: 28px;
+            }
+
+            .hero {
+                height: 320px;
+                padding-top: 100px;
+            }
+
+            .container {
+                padding: 25px 5%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>🏨 Grand Palace Hotel</h1>
+    <p>Experience Luxury and Comfort</p>
+</header>
+
+<nav>
+    <a href="#home">Home</a>
+    <a href="#rooms">Rooms</a>
+    <a href="#facilities">Facilities</a>
+    <a href="#tariffs">Tariffs</a>
+    <a href="#booking">Reservation</a>
+</nav>
+<section class="hero" id="home">
+    <h2>Welcome to Grand Palace</h2>
+    <p>Your Comfort is Our Priority</p>
+    <p>Enjoy a luxurious and peaceful stay with us.</p>
+</section>
+<section class="container" id="rooms">
+
+    <h2>Our Room Categories</h2>
+
+    <div class="room-container">
+
+        <div class="room-card">
+            <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=500"
+                 alt="Single room">
+
+            <h3>Single Room</h3>
+            <p>Comfortable room for one guest.</p>
+            <p>✔ Free Wi-Fi</p>
+            <p>✔ Air Conditioning</p>
+            <p class="price">₹1,500 / Night</p>
+        </div>
+
+        <div class="room-card">
+            <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=500"
+                 alt="Double room">
+
+            <h3>Double Room</h3>
+            <p>Spacious room for two guests.</p>
+            <p>✔ King Size Bed</p>
+            <p>✔ TV and Wi-Fi</p>
+            <p class="price">₹2,500 / Night</p>
+        </div>
+
+        <div class="room-card">
+            <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?w=500"
+                 alt="Deluxe room">
+
+            <h3>Deluxe Room</h3>
+            <p>Elegant room with modern facilities.</p>
+            <p>✔ Mini Refrigerator</p>
+            <p>✔ Room Service</p>
+            <p class="price">₹3,500 / Night</p>
+        </div>
+
+        <div class="room-card">
+            <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=500"
+                 alt="Luxury suite">
+
+            <h3>Luxury Suite</h3>
+            <p>Premium room with luxurious comfort.</p>
+            <p>✔ Private Balcony</p>
+            <p>✔ Premium Services</p>
+            <p class="price">₹5,000 / Night</p>
+        </div>
+
+    </div>
+</section>
+<section class="container" id="facilities">
+
+    <h2>Hotel Facilities</h2>
+
+    <div class="facilities">
+        <ul>
+            <li>📶 Free Wi-Fi</li>
+            <li>🏊 Swimming Pool</li>
+            <li>🍽 Restaurant and Dining</li>
+            <li>🚗 Free Parking</li>
+            <li>❄ Air Conditioning</li>
+            <li>💪 Fitness Centre</li>
+            <li>🛎 24/7 Room Service</li>
+            <li>🧺 Laundry Service</li>
+        </ul>
+    </div>
+</section>
+<section class="container" id="tariffs">
+
+    <h2>Room Tariffs</h2>
+
+    <div class="room-container">
+
+        <div class="room-card">
+            <h3>Single Room</h3>
+            <p class="price">₹1,500 / Night</p>
+        </div>
+
+        <div class="room-card">
+            <h3>Double Room</h3>
+            <p class="price">₹2,500 / Night</p>
+        </div>
+
+        <div class="room-card">
+            <h3>Deluxe Room</h3>
+            <p class="price">₹3,500 / Night</p>
+        </div>
+
+        <div class="room-card">
+            <h3>Luxury Suite</h3>
+            <p class="price">₹5,000 / Night</p>
+        </div>
+
+    </div>
+
+</section>
+<section class="container" id="booking">
+
+    <h2>Book Your Room</h2>
+
+    <form class="booking" action="#" method="post">
+
+        <label for="name">Full Name</label>
+        <input type="text" id="name"
+               placeholder="Enter your name" required>
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email"
+               placeholder="Enter your email" required>
+
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone"
+               placeholder="Enter your phone number" required>
+
+        <label for="room">Select Room Category</label>
+        <select id="room" required>
+            <option value="">Choose a room</option>
+            <option>Single Room</option>
+            <option>Double Room</option>
+            <option>Deluxe Room</option>
+            <option>Luxury Suite</option>
+        </select>
+
+        <label for="checkin">Check-in Date</label>
+        <input type="date" id="checkin" required>
+
+        <label for="checkout">Check-out Date</label>
+        <input type="date" id="checkout" required>
+
+        <label for="guests">Number of Guests</label>
+        <select id="guests">
+            <option>1 Guest</option>
+            <option>2 Guests</option>
+            <option>3 Guests</option>
+            <option>4 Guests</option>
+        </select>
+
+        <label for="requests">Special Requests</label>
+        <textarea id="requests" rows="4"
+                  placeholder="Enter your requirements"></textarea>
+
+        <button type="submit">Reserve Now</button>
+
+    </form>
+
+</section>
+<footer>
+    <h2 style="color:white;">Grand Palace Hotel</h2>
+    <p>Luxury | Comfort | Hospitality</p>
+    <p>Contact: +91 98765 43210</p>
+    <p>Email: info@grandpalace.com</p>
+    <p>© 2026 Grand Palace Hotel. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
